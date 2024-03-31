@@ -54,6 +54,11 @@ func (r *NasaImageService) GetNasaImage() (*model.DataNasaResponse, error) {
 		return nil, err
 	}
 
+	err = r.repo.GetAllNasaImage(sqlscripts.GetAllNasaImage, model.AllNasaDataResponse{})
+	if err != nil {
+		return nil, err
+	}
+
 	res := model.DataNasaResponse{
 		Explanation: nasaReq.Explanation,
 		Hdurl:       nasaReq.Hdurl,
