@@ -1,8 +1,5 @@
 package model
 
-type GetAllNasaImage struct {
-}
-
 type NasaImageResponse struct {
 	Copyright       string `json:"copyright"`
 	Date            string `json:"date"`
@@ -24,4 +21,8 @@ type DataNasaResponse struct {
 
 type DataResponse struct {
 	Data *DataNasaResponse `json:"data"`
+}
+
+type AllNasaDataResponse struct {
+	Data []DataNasaResponse `json:"data"`
 }
