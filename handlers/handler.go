@@ -3,13 +3,11 @@ package handlers
 import (
 	"fmt"
 	"github.com/gofiber/fiber/v2"
-	"refactor/model"
 	"refactor/services"
 )
 
 type Handler struct {
-	services  *services.Service
-	customErr model.ErrorBody
+	services *services.Service
 }
 
 func NewHandler(services *services.Service) *Handler {
