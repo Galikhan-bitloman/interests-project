@@ -38,6 +38,21 @@ func (p *NasaImagePostgres) CreateNasaImage(sqlQuery string, nasaRes model.NasaI
 	return nil
 }
 
-//func (p *NasaImagePostgres) GetAllNasaImage(sqlQuery string, res model.GetAllNasaImage) error {
-//	return nil
-//}
+func (p *NasaImagePostgres) GetAllNasaImage(sqlQuery string, res model.AllNasaDataResponse) error {
+
+	tx, err := p.db.Begin()
+	if err != nil {
+		return err
+	}
+	data, err := tx.Query(sqlQuery)
+
+	row, err := GetCalcData(data)
+	if err != nil {
+		return err
+	}
+	log.Println("row", row)
+	//for r := range row {
+	//	res.Data = append(res.Data, r)
+	//}
+	return nil
+}

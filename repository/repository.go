@@ -7,6 +7,7 @@ import (
 
 type NasaImage interface {
 	CreateNasaImage(sqlQuery string, nasaRes model.NasaImageResponse) error
+	GetAllNasaImage(sqlQuery string, res model.AllNasaDataResponse) error
 }
 
 type SalaryCalculation interface {
