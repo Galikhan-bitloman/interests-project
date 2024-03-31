@@ -10,4 +10,5 @@ const (
  				 `
 	InsertNasaData string = `INSERT INTO "postgres"."public"."nasa_images" (url, explanation, hdurl, date, title)
 					  VALUES ($1, $2, $3, $4, $5)`
+	GetAllNasaImage string = `SELECT url, explanation, hdurl, date, title FROM "postgres".public."nasa_images order by date desc"`
 )
