@@ -38,6 +38,6 @@ func (p *NasaImagePostgres) CreateNasaImage(sqlQuery string, nasaRes model.NasaI
 	return nil
 }
 
-func (p *NasaImagePostgres) GetAllNasaImage(sqlQuery string, res model.GetAllNasaImage) error {
-	return nil
-}
+//func (p *NasaImagePostgres) GetAllNasaImage(sqlQuery string, res model.GetAllNasaImage) error {
+//	return nil
+//}
