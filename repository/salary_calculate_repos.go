@@ -1,9 +1,10 @@
 package repository
 
 import (
-	"github.com/jmoiron/sqlx"
 	"log"
 	"refactor/model"
+
+	"github.com/jmoiron/sqlx"
 )
 
 type CalculateSalaryPostgres struct {
@@ -16,7 +17,7 @@ func NewCalculateSalaryPostgres(db *sqlx.DB) *CalculateSalaryPostgres {
 	}
 }
 
-func (c CalculateSalaryPostgres) CreateSalaryCalculation(sqlQuery string, req model.SalaryRequest, res model.SalaryResponse) error {
+func (c CalculateSalaryPostgres) CreateSalaryCalculationRepository(sqlQuery string, req model.SalaryRequest, res model.SalaryResponse) error {
 	tx, err := c.db.Begin()
 	if err != nil {
 		return err
