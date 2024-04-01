@@ -20,7 +20,7 @@ type DataNasaResponse struct {
 }
 
 type DataResponse struct {
-	Data *DataNasaResponse `json:"data"`
+	Data interface{} `json:"data"`
 }
 
 type AllNasaDataResponse struct {
