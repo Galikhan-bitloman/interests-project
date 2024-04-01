@@ -28,7 +28,7 @@ func (c *CalculateSalary) CalculateSalaryService(req model.SalaryRequest) (*mode
 		Saving:            req.Salary * 0.2,
 		NecessarySpending: req.Salary * 0.5,
 	}
-	err := c.repo.CreateSalaryCalculation(sqlscripts.Calc, req, *salaryResp)
+	err := c.repo.CreateSalaryCalculationRepository(sqlscripts.Calc, req, *salaryResp)
 	if err != nil {
 		log.Fatal(err)
 	}
