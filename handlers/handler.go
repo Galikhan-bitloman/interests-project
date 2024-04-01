@@ -2,8 +2,9 @@ package handlers
 
 import (
 	"fmt"
-	"github.com/gofiber/fiber/v2"
 	"refactor/services"
+
+	"github.com/gofiber/fiber/v2"
 )
 
 type Handler struct {
@@ -24,6 +25,7 @@ func (h *Handler) InitRoutes() (*fiber.App, error) {
 	interests := v1.Group("/interests")
 	interests.Get("/getNasaImage", h.GetNasaImageHandler)
 	interests.Post("/calculate", h.SalaryCalculateHandler)
+	interests.Get("/all/nasaImage", h.GetAllNasaImage)
 
 	return app, nil
 
