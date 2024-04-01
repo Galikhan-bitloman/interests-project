@@ -47,3 +47,6 @@ go.work
 # Gradle
 .idea/**/gradle.xml
 .idea/**/libraries
+
+# vscode
+.vscode/
