@@ -11,7 +11,7 @@ func GetCalcData(all *sql.Rows) ([]model.DataNasaResponse, error) {
 
 	for all.Next() {
 		var data model.DataNasaResponse
-		if err := all.Scan(data.Title, data.Url, data.Date, data.Explanation, data.Hdurl); err != nil {
+		if err := all.Scan(&data.Title, &data.Url, &data.Date, &data.Explanation, &data.Hdurl); err != nil {
 
 			fmt.Println("err in ", err)
 			return allData, err

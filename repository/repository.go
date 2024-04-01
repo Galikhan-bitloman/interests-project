@@ -1,17 +1,18 @@
 package repository
 
 import (
-	"github.com/jmoiron/sqlx"
 	"refactor/model"
+
+	"github.com/jmoiron/sqlx"
 )
 
 type NasaImage interface {
-	CreateNasaImage(sqlQuery string, nasaRes model.NasaImageResponse) error
-	GetAllNasaImage(sqlQuery string, res model.AllNasaDataResponse) error
+	CreateNasaImageRepository(sqlQuery string, nasaRes model.NasaImageResponse) error
+	GetAllNasaImageRepository(sqlQuery string) (*[]model.DataNasaResponse, error)
 }
 
 type SalaryCalculation interface {
-	CreateSalaryCalculation(sqlQuery string, req model.SalaryRequest, res model.SalaryResponse) error
+	CreateSalaryCalculationRepository(sqlQuery string, req model.SalaryRequest, res model.SalaryResponse) error
 }
 
 type Repository struct {

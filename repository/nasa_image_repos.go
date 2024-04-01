@@ -2,9 +2,10 @@ package repository
 
 import (
 	"fmt"
-	"github.com/jmoiron/sqlx"
 	"log"
 	"refactor/model"
+
+	"github.com/jmoiron/sqlx"
 )
 
 type NasaImagePostgres struct {
@@ -17,7 +18,7 @@ func NewNasaImagePostgres(db *sqlx.DB) *NasaImagePostgres {
 	}
 }
 
-func (p *NasaImagePostgres) CreateNasaImage(sqlQuery string, nasaRes model.NasaImageResponse) error {
+func (p *NasaImagePostgres) CreateNasaImageRepository(sqlQuery string, nasaRes model.NasaImageResponse) error {
 	fmt.Println("hello create")
 
 	tx, err := p.db.Begin()
@@ -38,21 +39,20 @@ func (p *NasaImagePostgres) CreateNasaImage(sqlQuery string, nasaRes model.NasaI
 	return nil
 }
 
-func (p *NasaImagePostgres) GetAllNasaImage(sqlQuery string, res model.AllNasaDataResponse) error {
-
+func (p *NasaImagePostgres) GetAllNasaImageRepository(sqlQuery string) (*[]model.DataNasaResponse, error) {
 	tx, err := p.db.Begin()
 	if err != nil {
-		return err
+		return nil, err
 	}
 	data, err := tx.Query(sqlQuery)
 
+	fmt.Println("heree", data)
+
 	row, err := GetCalcData(data)
+	fmt.Println("row", row)
 	if err != nil {
-		return err
+		return nil, err
 	}
-	log.Println("row", row)
-	//for r := range row {
-	//	res.Data = append(res.Data, r)
-	//}
-	return nil
+
+	return &row, nil
 }
