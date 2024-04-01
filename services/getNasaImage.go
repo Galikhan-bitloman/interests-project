@@ -21,7 +21,7 @@ func NewNasaImageService(repo repository.NasaImage) *NasaImageService {
 	}
 }
 
-func (r *NasaImageService) GetNasaImage() (*model.DataNasaResponse, error) {
+func (r *NasaImageService) GetNasaImageService() (*model.DataNasaResponse, error) {
 	url := "https://api.nasa.gov/planetary/apod?api_key=SI41eTW8EMaHkrIUwDq7iVdYqzBDT1bx2Bgh5gCo"
 
 	request, err := http.NewRequest("GET", url, nil)
@@ -49,12 +49,7 @@ func (r *NasaImageService) GetNasaImage() (*model.DataNasaResponse, error) {
 		return nil, err
 	}
 	//TODO: new image appears once a day so need to handle and don't add already existing data (check using date)
-	err = r.repo.CreateNasaImage(sqlscripts.InsertNasaData, nasaReq)
-	if err != nil {
-		return nil, err
-	}
-
-	err = r.repo.GetAllNasaImage(sqlscripts.GetAllNasaImage, model.AllNasaDataResponse{})
+	err = r.repo.CreateNasaImageRepository(sqlscripts.InsertNasaData, nasaReq)
 	if err != nil {
 		return nil, err
 	}
