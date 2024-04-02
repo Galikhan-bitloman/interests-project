@@ -48,5 +48,8 @@ go.work
 .idea/**/gradle.xml
 .idea/**/libraries
 
+#.idea/
+.idea/
+
 # vscode
 .vscode/
