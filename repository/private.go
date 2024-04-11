@@ -3,7 +3,6 @@ package repository
 import (
 	"database/sql"
 	"fmt"
-	"log"
 	"refactor/model"
 )
 
@@ -19,8 +18,6 @@ func GetCalcData(all *sql.Rows) ([]model.DataNasaResponse, error) {
 		}
 		allData = append(allData, data)
 	}
-
-	log.Println(allData)
 	return allData, nil
 
 }
