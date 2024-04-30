@@ -37,6 +37,6 @@ func (h *Handler) GetAllNasaImage(ctx *fiber.Ctx) error {
 
 	log.Println(res)
 
-	return ctx.JSON(&res)
+	return ctx.Status(200).JSON(&res)
 
 }

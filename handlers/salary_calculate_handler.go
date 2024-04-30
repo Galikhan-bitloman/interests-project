@@ -26,5 +26,5 @@ func (h *Handler) SalaryCalculateHandler(ctx *fiber.Ctx) error {
 	}
 	log.Println(res)
 
-	return ctx.JSON(res)
+	return ctx.Status(200).JSON(res)
 }
