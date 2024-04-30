@@ -5,6 +5,8 @@ import (
 	"refactor/services"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
+	"github.com/gofiber/fiber/v2/middleware/csrf"
 )
 
 type Handler struct {
@@ -20,6 +22,10 @@ func (h *Handler) InitRoutes() (*fiber.App, error) {
 	fmt.Println("here's happening routing")
 
 	app := fiber.New()
+
+	app.Use(cors.New())
+	app.Use(csrf.New())
+
 	api := app.Group("/api")
 	v1 := api.Group("/v1")
 	interests := v1.Group("/interests")
