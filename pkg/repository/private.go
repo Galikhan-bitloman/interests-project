@@ -3,7 +3,7 @@ package repository
 import (
 	"database/sql"
 	"fmt"
-	"refactor/model"
+	"interests-project/pkg/model"
 )
 
 func GetCalcData(all *sql.Rows) ([]model.DataNasaResponse, error) {

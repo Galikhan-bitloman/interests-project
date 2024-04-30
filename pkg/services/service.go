@@ -1,8 +1,8 @@
 package services
 
 import (
-	"refactor/model"
-	"refactor/repository"
+	"interests-project/pkg/model"
+	"interests-project/pkg/repository"
 )
 
 type Nasa interface {

@@ -1,13 +1,14 @@
 package services
 
 import (
+	"interests-project/pkg/model"
+	"interests-project/pkg/repository"
+	"interests-project/pkg/sqlscripts"
+
 	"encoding/json"
 	"fmt"
 	"io"
 	"net/http"
-	"refactor/model"
-	"refactor/repository"
-	"refactor/sqlscripts"
 	"time"
 )
 

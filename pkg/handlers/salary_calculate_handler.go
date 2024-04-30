@@ -1,8 +1,8 @@
 package handlers
 
 import (
+	"interests-project/pkg/model"
 	"log"
-	"refactor/model"
 
 	"github.com/gofiber/fiber/v2"
 )

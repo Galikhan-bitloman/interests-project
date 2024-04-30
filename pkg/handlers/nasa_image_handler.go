@@ -1,9 +1,9 @@
 package handlers
 
 import (
+	"interests-project/pkg/model"
+	"interests-project/pkg/sqlscripts"
 	"log"
-	"refactor/model"
-	"refactor/sqlscripts"
 
 	"github.com/gofiber/fiber/v2"
 )

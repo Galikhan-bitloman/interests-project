@@ -1,7 +1,7 @@
 package services
 
 import (
-	"refactor/model"
+	"interests-project/pkg/model"
 )
 
 func (r *NasaImageService) GetAllNasaImageService(sqlQuery string) (*model.AllNasaDataResponse, error) {

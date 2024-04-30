@@ -2,8 +2,8 @@ package repository
 
 import (
 	"fmt"
+	"interests-project/pkg/model"
 	"log"
-	"refactor/model"
 
 	"github.com/jmoiron/sqlx"
 )

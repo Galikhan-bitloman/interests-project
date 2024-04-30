@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"fmt"
-	"refactor/services"
+	"interests-project/pkg/services"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"

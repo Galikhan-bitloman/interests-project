@@ -1,11 +1,11 @@
 package main
 
 import (
+	"interests-project/pkg/handlers"
+	"interests-project/pkg/repository"
 	"log"
-	"refactor/handlers"
-	"refactor/repository"
 
-	"refactor/services"
+	"interests-project/pkg/services"
 )
 
 func main() {

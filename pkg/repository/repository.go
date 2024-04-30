@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"refactor/model"
+	"interests-project/model"
 
 	"github.com/jmoiron/sqlx"
 )

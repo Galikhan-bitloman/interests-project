@@ -1,4 +1,4 @@
-module refactor
+module interests-project
 
 go 1.21.1
 

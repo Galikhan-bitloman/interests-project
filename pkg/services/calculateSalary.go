@@ -2,10 +2,10 @@ package services
 
 import (
 	"errors"
+	"interests-project/pkg/model"
+	"interests-project/pkg/repository"
+	"interests-project/pkg/sqlscripts"
 	"log"
-	"refactor/model"
-	"refactor/repository"
-	"refactor/sqlscripts"
 )
 
 type CalculateSalary struct {
