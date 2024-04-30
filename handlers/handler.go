@@ -18,7 +18,6 @@ func NewHandler(services *services.Service) *Handler {
 }
 
 func (h *Handler) InitRoutes() (*fiber.App, error) {
-	//	here's happening routing
 	fmt.Println("here's happening routing")
 
 	app := fiber.New()
