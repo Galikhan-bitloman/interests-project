@@ -45,6 +45,9 @@ func (p *NasaImagePostgres) GetAllNasaImageRepository(sqlQuery string) (*[]model
 		return nil, err
 	}
 	data, err := tx.Query(sqlQuery)
+	if err != nil {
+		return nil, err
+	}
 
 	fmt.Println("heree", data)
 

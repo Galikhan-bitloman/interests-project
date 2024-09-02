@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"interests-project/model"
+	"interests-project/pkg/model"
 
 	"github.com/jmoiron/sqlx"
 )
