@@ -1,7 +1,6 @@
 package repository
 
 import (
-	"fmt"
 	"interests-project/pkg/model"
 	"log"
 
@@ -19,7 +18,6 @@ func NewNasaImagePostgres(db *sqlx.DB) *NasaImagePostgres {
 }
 
 func (p *NasaImagePostgres) CreateNasaImageRepository(sqlQuery string, nasaRes model.NasaImageResponse) error {
-	fmt.Println("hello create")
 
 	tx, err := p.db.Begin()
 	if err != nil {
@@ -34,7 +32,7 @@ func (p *NasaImagePostgres) CreateNasaImageRepository(sqlQuery string, nasaRes m
 		}
 		return err
 	}
-	log.Println("Inserted data")
+
 	_ = tx.Commit()
 	return nil
 }
@@ -49,10 +47,8 @@ func (p *NasaImagePostgres) GetAllNasaImageRepository(sqlQuery string) (*[]model
 		return nil, err
 	}
 
-	fmt.Println("heree", data)
-
 	row, err := GetCalcData(data)
-	fmt.Println("row", row)
+
 	if err != nil {
 		return nil, err
 	}
